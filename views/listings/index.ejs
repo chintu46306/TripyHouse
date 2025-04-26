@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate") %>
 
-<!-- <!DOCTYPE html>
+    <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,16 +8,45 @@
     <title>TripyHouse</title>
 </head> -->
 
-<body>
-    <h1>All Listings</h1>
-    <!-- <form method="GET" action="/listings/new">
+    <body>
+        <h1>All Listings</h1>
+        <!-- <form method="GET" action="/listings/new">
         <button>Create New Listing</button>
     </form> -->
-    <ul>
-        <% for(let listing of allListings) { %>
-            <li> <a href="/listings/<%= listing._id %>"><%= listing.title %></a></li>
-       <% } %>
-    </ul>
-</body>
+
+        <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
+
+            <% for(let listing of allListings) { %>
+                <a href="/listings/<%= listing._id %>" class="listing-link">
+
+                    <div class="card col">
+                        <!-- <% if(listing?.image?.url) { %>
+                            <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image">          
+                        <% } %> -->
+                        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height:20rem" />
+                        <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                            <p class="card-text">
+                             <b><%= listing.title %></b><br>
+                                <%= listing.price.toLocaleString("en-IN") %> /night
+                            </p>
+                        </div>
+                    </div>
+                    <% } %>
+
+                </a>
+
+        </div>
+
+        
 
 
+         <!-- list of all the listing -->
+                <!-- <ul>
+                    <% for(let listing of allListings) { %>
+                        <li> <a href="/listings/<%= listing._id %>">
+                                <%= listing.title %>
+                            </a></li>
+                        <% } %>
+                </ul> -->
+    </body>
