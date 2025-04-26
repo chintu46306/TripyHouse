@@ -1,6 +1,9 @@
 # Node.js dependencies
 node_modules/
 
+#md file
+*.md
+
 # Logs
 logs
 *.log
