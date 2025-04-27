@@ -14,8 +14,13 @@
         </div>    
         
         <div class="mb-3">
-            <label for="image" class="form-label">Image Link</label>
-            <input name="listing[image]" value="<%= listing.image %>" type="text" class="form-control"/>
+            <label for="image" class="form-label">Image URL</label>
+            <input name="listing[image][url]" value="<%= listing.image.url %>" type="text" class="form-control" />
+        </div>
+        
+        <div class="mb-3">
+            <label for="imagename" class="form-label">Image Filename</label>
+            <input name="listing[image][filename]" value="<%= listing.image.filename %>" type="text" class="form-control" />
         </div>
         
         <div class="row">
